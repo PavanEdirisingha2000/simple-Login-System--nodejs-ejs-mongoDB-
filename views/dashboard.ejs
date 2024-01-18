@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+      text-align: right;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav li {
+      display: inline;
+      margin-left: 10px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .dashboard-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 10px 0;
+      color: #333;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="/dashboard">Dashboard</a></li>
+      <li><a href="/login">Logout</a></li>
+    </ul>
+  </nav>
+
+  <h1>Welcome to the Dashboard</h1>
+  <div class="dashboard-container">
+    <p>User Details:</p>
+    <ul>
+      <li><strong>First Name:</strong> <%= user.firstName %></li>
+      <li><strong>Last Name:</strong> <%= user.lastName %></li>
+      <li><strong>Email:</strong> <%= user.email %></li> 
+    </ul>
+
+    <% if (user.photoPath) { %>
+      <img src="<%= user.photoPath %>" alt="User Photo">
+    <% } %>
+  </div>
+</body>
+</html>
